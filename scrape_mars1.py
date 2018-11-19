@@ -26,11 +26,11 @@ def scrape():
     url = 'https://www.jpl.nasa.gov/spaceimages/?search=&category=Mars'
     browser.visit(url)
 
-    tables = pd.read_html(url)
-    df = tables[0]
-    df.columns = ["Description", "Values"]
-    df.set_index('Description', inplace=True)
-    listings["html_table"] = df.to_html
+    # tables = pd.read_html(url)
+    # df = tables[0]
+    # df.columns = ["Description", "Values"]
+    # df.set_index('Description', inplace=True)
+    # listings["html_table"] = df.to_html
 
     response_tw = requests.get(tw_url)
     response_nasa = requests.get(url_nasa)
